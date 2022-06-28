@@ -1,3 +1,7 @@
+package ru.netology.product;
+
+import ru.netology.product.Product;
+
 public class ProductManager {
     private ProductRepository repository;
 
@@ -10,7 +14,7 @@ public class ProductManager {
     }
 
     public Product[] searchBy(String text) {
-        Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукты
+        Product[] result = new Product[0];
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {
                 Product[] x = new Product[result.length + 1];

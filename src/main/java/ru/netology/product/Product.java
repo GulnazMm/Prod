@@ -1,3 +1,5 @@
+package ru.netology.product;
+
 import java.util.Collection;
 
 public class Product {
