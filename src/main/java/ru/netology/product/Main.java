@@ -13,7 +13,7 @@ public class Main {
         manager.add(new Smartphone(17,"Samsung",200, "Samsung Group" ));
         manager.add(new Smartphone(18,"Samsung10", 300, "Samsung Group"));
 
-        Product[] result = manager.searchBy("15");
+        Product[] result = manager.searchBy("кин");
 
 
 

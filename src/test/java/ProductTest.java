@@ -63,19 +63,37 @@ public class ProductTest {
 
 
         }
+
         @Test
-    public void searchBy(){
+        public void searchBy(){
         manager.add(book1);
         manager.add(book2);
-
-
-        manager.searchBy("кин");
-
-        Product[] actual = repository.findAll();
-        Product[]expected = {book1,book2};
-        Assertions.assertArrayEquals (expected, actual);
+        manager.add(smartphone1);
+        manager.add(smartphone2);
+        manager.searchBy("Sam");
+            Product[]actual = manager.searchBy("Sam");
+            Product[]expected = {smartphone1,smartphone2};
+            Assertions.assertArrayEquals (expected,actual);
 
         }
+
+    @Test
+    public void searchByWord(){
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smartphone1);
+        manager.add(smartphone2);
+
+        manager.searchBy("hj");
+
+
+        Product[] actual = manager.searchBy("hj");
+        Product[]expected = {};
+        Assertions.assertArrayEquals(expected,actual);
+
+    }
+
+
         @Test
     public void matches(){
             manager.add(book1);
