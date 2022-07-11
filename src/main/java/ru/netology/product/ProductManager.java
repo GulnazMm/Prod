@@ -4,6 +4,8 @@ import ru.netology.product.Product;
 
 public class ProductManager {
     private ProductRepository repository;
+    private Product[] products = new Product[0];
+
 
     public ProductManager(ProductRepository repository) {
         this.repository = repository;
@@ -13,23 +15,44 @@ public class ProductManager {
         repository.add(product);
     }
 
-    public Product[] searchBy(String text) {
+    public Product[] searchBy(String query) {
         Product[] result = new Product[0];
         for (Product product : repository.findAll()) {
-            if (matches(product, text)) {
+            if (product.matches(query)) {
                 Product[] x = new Product[result.length + 1];
                 for (int i = 0; i < result.length; i++) {
-                    x[i]= result[i];
+                    x[i] = result[i];
                 }
                 x[x.length - 1] = product;
                 result = x;
             }
+
         }
         return result;
+
     }
+
+
     public boolean matches(Product product, String search) {
 
-            return product.getName().contains(search);
+        return product.getName().contains(search);
 
     }
 }
+
+    /*public  boolean matches (String query){
+        if (Product.contains(query))
+    }
+    return
+
+for (int i = 0; i < result.length; i++) {
+                    x[i] = result[i];
+                }*/
+               /* x[x.length - 1] = product;
+                        result = x;
+                        }
+
+                        }
+                        return result;*/
+
+

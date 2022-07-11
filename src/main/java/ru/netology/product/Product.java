@@ -12,6 +12,10 @@ public class Product {
         this.name = name;
         this.price = price;
     }
+    public boolean matches(String query) {
+
+        return name.contains(query);
+    }
 
     public int getId() {
         return id;

@@ -9,4 +9,18 @@ public class Book extends Product {
         super(id, name, price);
         this.avtor = avtor;
     }
+    @Override
+    public boolean matches(String query){
+        if (super.matches(query)){
+            return true;
+        }
+        if (avtor.contains(query)){
+            return true;
+        }
+
+         return false;
+        }
+
+
 }
+
