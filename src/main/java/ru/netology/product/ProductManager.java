@@ -40,19 +40,6 @@ public class ProductManager {
     }
 }
 
-    /*public  boolean matches (String query){
-        if (Product.contains(query))
-    }
-    return
 
-for (int i = 0; i < result.length; i++) {
-                    x[i] = result[i];
-                }*/
-               /* x[x.length - 1] = product;
-                        result = x;
-                        }
-
-                        }
-                        return result;*/
 
 
